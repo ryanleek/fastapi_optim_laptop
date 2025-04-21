@@ -214,7 +214,7 @@ class Laptop(BaseModel):
 
 @app.get("/privacy", response_class=HTMLResponse)
 async def privacy_policy():
-    with open("index.html", "r") as file:
+    with open("privacy.html", "r") as file:
         return file.read()
 
 @app.get("/optimize", response_model=List[Laptop])
