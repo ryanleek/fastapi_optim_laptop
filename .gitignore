@@ -1,0 +1,6 @@
+/.DS_Store
+/.env
+/__pycache__
+/at_intro.key
+/fastapi_optim
+/key.pem
