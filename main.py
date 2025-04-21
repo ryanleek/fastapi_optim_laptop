@@ -184,18 +184,18 @@ app = FastAPI(
     version="1.0.0",
     servers=[
         {
-            "url": "https://fda0-147-46-60-59.ngrok-free.app",
+            "url": "https://fastapi-optim-laptop.vercel.app",
             "description": "Local development server, improves user parameter and then performs optimizaiton"
         }
     ]
 )
 
-# Custom middleware to handle ngrok header
-@app.middleware("http")
-async def add_ngrok_header(request: Request, call_next):
-    response = await call_next(request)
-    response.headers["ngrok-skip-browser-warning"] = "true"
-    return response
+# # Custom middleware to handle ngrok header
+# @app.middleware("http")
+# async def add_ngrok_header(request: Request, call_next):
+#     response = await call_next(request)
+#     response.headers["ngrok-skip-browser-warning"] = "true"
+#     return response
 
 # Configure CORS
 app.add_middleware(
