@@ -148,7 +148,9 @@ def solve_sequentially(names, matrix, final_features, feature_keys, num_suggesti
                     break
         else:
             break
-            
+    
+    print(selected_items)
+    
     return selected_items
 
 
