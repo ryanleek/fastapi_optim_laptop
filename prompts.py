@@ -9,13 +9,13 @@ Based on the conversation, extract the following:
 
 2. WANTS: Positive features that would benefit the client in order to achieve the OBJECTIVE.
     - DO NOT include features that avoid, exclude or deny a certain aspect
-    - you will be PUNISHED for starting feature name with with "no", "non"
+    - you will be PUNISHED for starting feature name with "no" and "non"
     - name each feature using three words at most
     - handle one feature entity at a time, don't make features like "intel_or_amd" or "gaming_and_coding", focus on single features
     - use only lowercase letters and underscore(_) to represent spaces
 
 3. AVOIDS: Negative features that hinder client's OBJECTIVE.
-    - AGAIN, you will be PENALIZED for starting feature name with with "no", "non"
+    - AGAIN, you will be PENALIZED for starting feature name with with "no" and "non"
     - same naming structure as PREFERENCE
 
 Provide your result in following json format:
@@ -152,7 +152,7 @@ Preference: [{"name": "sour"}, {"name": "has_chicken"}, {"name": "has_meat"}]
 Dislikes: [{"name": "has_peanut"}]
 Your result should be: {
     "result": [
-     {"name": "sour", "type": "objective"},
+     {"name": "is_sour", "type": "objective"},
      {"name": "has_chicken", "type": "objective"}, 
      {"name": "has_meat", "type": "objective"},
      {"name": "has_peanut", "type": "constraint"}
@@ -161,6 +161,9 @@ Your result should be: {
 
 From the example, has_peanut's type is constraint because the client is allergic to peanut and it is dangerous to serve food with peanuts.
 Others are objective because they match the client's preferences but it is not make or break for the client.
+
+Finally, DO NOT label features that don't start with "has" or "is" as constraint.
+If "price" is set as 'constraint' then any item that has a price value(all items) will be excluded!!
 
 Now label each features given the Client's Request.
 
